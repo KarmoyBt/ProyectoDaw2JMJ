@@ -1,9 +1,9 @@
 <?php 
 
-if(isset($_POST['user']) && isset($_POST['password'])){
+if(isset($_POST['inputUser']) && isset($_POST['inputContraseña'])){
 
-    $user = $_POST['user'];   
-    $password = $_POST['password'];
+    $user = $_POST['inputUser'];   
+    $password = $_POST['inputContraseña'];
 
     //echo $user.''.$password;
 
