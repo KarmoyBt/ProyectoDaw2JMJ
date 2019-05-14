@@ -8,7 +8,7 @@ if(isset($_POST['user']) && isset($_POST['password'])){
     //echo $user.''.$password;
 
     //meterle db
-    $connection = mysqli_connect("localhost", "projecto_admin", "P@ssw0rd", "projecto_discografica");
+    $connection = mysqli_connect("localhost", "projecto_admin", "nombreapellido.", "projecto_discografica");
 
     $data = mysqli_query($connection, "SELECT * FROM usuari WHERE email = '{$user}' AND  contrasenya = '{$password}'");
 
@@ -22,7 +22,7 @@ if(isset($_POST['user']) && isset($_POST['password'])){
         echo "success";
 
     }else{
-        echo "failed";
+        echo "No se ha encontrado datos";
     }
 
 
@@ -30,6 +30,13 @@ if(isset($_POST['user']) && isset($_POST['password'])){
 
 
 }
+if(isset($_POST['user'])){
+    echo "Falta Usuario";
+}
+if(isset($_POST['password'])){
+    echo "Falta contraseña";
+}
+
 
 
 ?>
