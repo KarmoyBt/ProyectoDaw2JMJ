@@ -3,14 +3,14 @@
 if(isset($_POST['inputUser']) && isset($_POST['inputContraseña'])){
 
     $user = $_POST['inputUser'];   
-    $contra = $_POST['inputContraseña'];
+    $password = $_POST['inputContraseña'];
 
     //echo $user.''.$password;
 
     //meterle db
-    $connection = mysqli_connect("localhost", "javimart_json", "nombreapellido.", "javimart_m6");
+    $connection = mysqli_connect("localhost", "projecto_admin", "nombreapellido.", "projecto_discografica");
 
-    $data = mysqli_query($connection, "SELECT 'uid' FROM users WHERE  username = '{$user}' AND  contrasenya = '{$contra}'");
+    $data = mysqli_query($connection, "SELECT * FROM usuari WHERE email = '{$user}' AND  contrasenya = '{$password}'");
 
     $row_cnt = mysqli_num_rows($data);
 
@@ -30,10 +30,10 @@ if(isset($_POST['inputUser']) && isset($_POST['inputContraseña'])){
 
 
 }
-if(isset($_POST['inputUser'])){
+if(isset($_POST['user'])){
     echo "Falta Usuario";
 }
-if(isset($_POST['inputContraseña'])){
+if(isset($_POST['password'])){
     echo "Falta contraseña";
 }
 
