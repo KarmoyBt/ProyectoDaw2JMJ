@@ -1,0 +1,27 @@
+https://stackoverflow.com/questions/14449118/php-ajax-login
+
+
+<form id="loginform" method="post">
+    Username: <input type="text" name="username" id="username" value=""> Password: <input type="password" name="password" id="password" value="">
+
+    <input type="submit" name="loginsub" id="loginsub" value="Login">
+</form>
+<script>
+    $(document).ready(function() {
+        $('#loginform').submit(function(e) {
+            e.preventDefault();
+            $.ajax({
+                type: "POST",
+                url: '/class/login.php',
+                data: $(this).serialize(),
+                success: function(data) {
+                    if (data === 'Login') {
+                        window.location = '/user-page.php';
+                    } else {
+                        alert('Invalid Credentials');
+                    }
+                }
+            });
+        });
+    });
+</script>
