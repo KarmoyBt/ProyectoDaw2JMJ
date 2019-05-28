@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ 
+ <div class='tarjetas_servicios' id='tarjetas_servicios'><div>
+<script>
+
+    console.log("ok");
+
+
+    $.ajax({
+        type: "GET",
+        url: "contenido.php",
+        data: {
+            'carga' : 'ok',
+        dataType:"JSON",
+        } ,
+        success: function(data){
+        data.length;
+         $("#tarjetas_servicios").append(
+         
+           for(var x=data.length;x>data.length;x++){
+           '<p id='+x+'>'+data[x]+'<p>'
+               
+           }
+               );
+            }
+        
+    });
+</script>
+</body>
+</html>
